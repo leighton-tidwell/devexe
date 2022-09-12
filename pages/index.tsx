@@ -3,12 +3,12 @@ import { Button, Logo } from "@/components/index";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Button type="button" onClick={() => {}}>
+    <>
+      <Button type="button" loading={true} onClick={() => {}}>
         Test
       </Button>
       <Logo sx={{ width: "20px" }} />
-    </div>
+    </>
   );
 };
 
