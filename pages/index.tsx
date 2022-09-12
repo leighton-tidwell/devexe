@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
-import { Button } from "@/components/index";
+import { Button, Logo } from "@/components/index";
 
 const Home: NextPage = () => {
   return (
-    <Button type="button" onClick={() => {}}>
-      Test
-    </Button>
+    <div>
+      <Button type="button" onClick={() => {}}>
+        Test
+      </Button>
+      <Logo sx={{ width: "20px" }} />
+    </div>
   );
 };
 
