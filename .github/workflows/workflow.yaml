@@ -1,12 +1,9 @@
 name: DEVEXE Pipeline
 
 on:
-  push:
-    branches:
-      - "**"
   pull_request:
     branches:
-      - "**"
+      - "main"
 
 permissions:
   checks: write
