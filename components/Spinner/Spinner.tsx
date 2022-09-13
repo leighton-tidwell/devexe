@@ -1,11 +1,11 @@
-import { Box } from "theme-ui";
-import { useTheme } from "../../hooks/useThemeUI";
-import { SpinnerProps } from "./spinnerTypes";
+import { Box } from 'theme-ui';
+import { useTheme } from '../../hooks/useThemeUI';
+import { SpinnerProps } from './spinnerTypes';
 
-export const Spinner = ({
-  size = "small",
-  color = "primary",
-}: SpinnerProps) => {
+export function Spinner({
+  size = 'small',
+  color = 'primary',
+}: SpinnerProps) {
   const { theme } = useTheme();
 
   const sizes = {
@@ -29,16 +29,16 @@ export const Spinner = ({
       sx={{
         width: `${spinnerSize}px`,
         height: `${spinnerSize}px`,
-        borderRadius: "50%",
+        borderRadius: '50%',
         background: `conic-gradient(#0000 10%,${spinnerColor})`,
         WebkitMask: `radial-gradient(farthest-side,#0000 calc(100% - ${innerCircleOffset}px),#000 0)`,
-        animation: "spinner 1s infinite linear",
-        "@keyframes spinner": {
+        animation: 'spinner 1s infinite linear',
+        '@keyframes spinner': {
           to: {
-            transform: "rotate(1turn)",
+            transform: 'rotate(1turn)',
           },
         },
       }}
     />
   );
-};
+}

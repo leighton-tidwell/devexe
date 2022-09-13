@@ -1,28 +1,29 @@
-import { Button as ThemeUIButton, Text } from "theme-ui";
-import { ButtonProps } from "./buttonTypes";
-import { Spinner } from "@/components/index";
+import React from 'react';
+import { Button as ThemeUIButton, Text } from 'theme-ui';
+import { Spinner } from '@/components/index';
+import { ButtonProps } from './buttonTypes';
 
-export const Button = ({
-  children = "",
+export function Button({
+  children = '',
   disabled = false,
   onClick = () => {},
   loading = false,
-  variant = "primary",
+  variant = 'primary',
   ...props
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <ThemeUIButton
       onClick={onClick}
       disabled={disabled}
       sx={{
-        color: "text.primary",
-        borderRadius: "10px",
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "8px",
-        padding: ".5em .8em",
+        color: 'text.primary',
+        borderRadius: '10px',
+        cursor: 'pointer',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        padding: '.5em .8em',
       }}
       variant={variant}
       {...props}
@@ -32,4 +33,4 @@ export const Button = ({
       <Text>{children}</Text>
     </ThemeUIButton>
   );
-};
+}

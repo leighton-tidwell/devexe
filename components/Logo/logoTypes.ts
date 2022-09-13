@@ -1,5 +1,5 @@
-import { BoxProps as ThemeUIBoxProps } from "theme-ui";
+import { BoxProps as ThemeUIBoxProps } from 'theme-ui';
 
 export interface LogoProps extends ThemeUIBoxProps {
-  variant?: "default" | "icon" | "no-icon";
+  variant?: 'default' | 'icon' | 'no-icon';
 }

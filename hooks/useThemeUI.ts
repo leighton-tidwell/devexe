@@ -1,7 +1,7 @@
-import { ThemeUIContextValue, useThemeUI } from "theme-ui";
-import { ExactTheme } from "../theme";
+import { ThemeUIContextValue, useThemeUI } from 'theme-ui';
+import { ExactTheme } from '../theme';
 
-interface ExactContextValue extends Omit<ThemeUIContextValue, "theme"> {
+interface ExactContextValue extends Omit<ThemeUIContextValue, 'theme'> {
   theme: ExactTheme;
 }
 

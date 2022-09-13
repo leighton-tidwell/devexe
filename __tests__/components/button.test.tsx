@@ -1,10 +1,10 @@
-import { render, screen } from "../test-utils";
-import { Button } from "@/components/index";
+import { Button } from '@/components/index';
+import { render, screen } from '../test-utils';
 
-describe("Button", () => {
-  it("should render a button with primary styles applied", () => {
+describe('Button', () => {
+  it('should render a button with primary styles applied', () => {
     render(<Button>Hello World</Button>);
 
-    expect(screen.getByRole("button")).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 });
