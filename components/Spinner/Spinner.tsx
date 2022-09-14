@@ -2,7 +2,10 @@ import { Box } from 'theme-ui';
 import { useTheme } from '../../hooks/useThemeUI';
 import { SpinnerProps } from './spinnerTypes';
 
-export const Spinner = ({ size = 'small', color = 'primary' }: SpinnerProps) => {
+export const Spinner = ({
+  size = 'small',
+  color = 'primary'
+}: SpinnerProps) => {
   const { theme } = useTheme();
 
   const sizes = {
