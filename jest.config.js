@@ -13,6 +13,14 @@ const customJestConfig = {
   },
   testEnvironment: "jest-environment-jsdom",
   testMatch: ["**/__tests__/**/*.test.[jt]s?(x)"],
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 80,
+      statements: 0,
+    },
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);
