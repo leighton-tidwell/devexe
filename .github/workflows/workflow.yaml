@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   lint:
-    name: Lint
+    name: Lint and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -33,22 +33,7 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.15.1
-
-      - name: Install Node.js dependencies
-        run: yarn install --frozen-lockfile
+          prettier: true
 
       - name: Run lint
         run: yarn test:ci
