@@ -35,5 +35,5 @@ jobs:
           eslint: true
           prettier: true
 
-      - name: Run lint
+      - name: Run test
         run: yarn test:ci
