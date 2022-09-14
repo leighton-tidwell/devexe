@@ -32,6 +32,17 @@
       "rules": {
         "@typescript-eslint/comma-dangle": "off"
       }
+    },
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "jest.config.js",
+        "jest.setup.js"
+      ],
+      "env": {
+        "jest": true
+      }
     }
   ]
 }
