@@ -2,22 +2,19 @@ import { Box } from 'theme-ui';
 import { useTheme } from '../../hooks/useThemeUI';
 import { SpinnerProps } from './spinnerTypes';
 
-export function Spinner({
-  size = 'small',
-  color = 'primary',
-}: SpinnerProps) {
+export const Spinner = ({ size = 'small', color = 'primary' }: SpinnerProps) => {
   const { theme } = useTheme();
 
   const sizes = {
     small: 18,
     medium: 24,
-    large: 36,
+    large: 36
   };
 
   const colors = {
     primary: theme.colors.primary,
     secondary: theme.colors.secondary,
-    text: theme.colors.text.primary,
+    text: theme.colors.text.primary
   };
 
   const spinnerSize = sizes[size];
@@ -35,10 +32,10 @@ export function Spinner({
         animation: 'spinner 1s infinite linear',
         '@keyframes spinner': {
           to: {
-            transform: 'rotate(1turn)',
-          },
-        },
+            transform: 'rotate(1turn)'
+          }
+        }
       }}
     />
   );
-}
+};
