@@ -18,8 +18,11 @@
           2,
           { "namedComponents": "arrow-function" }
         ],
+        "react/require-default-props": "off",
+        "object-curly-newline": "off",
         "comma-dangle": "off",
-        "max-len": "off"
+        "max-len": "off",
+        "operator-linebreak": "off"
       }
     },
     {
@@ -30,7 +33,9 @@
         "project": ["./tsconfig.json"]
       },
       "rules": {
-        "@typescript-eslint/comma-dangle": "off"
+        "@typescript-eslint/comma-dangle": "off",
+        "indent": "off",
+        "@typescript-eslint/indent": "off"
       }
     },
     {

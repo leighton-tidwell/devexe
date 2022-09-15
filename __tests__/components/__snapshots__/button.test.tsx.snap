@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button when the variant is cta should have correct styles 1`] = `
+<div>
+  <button
+    aria-busy="false"
+    class="css-6b5e9z-Box"
+    name="test-button"
+    role="button"
+  >
+    <span
+      class="css-1peva9n-Box"
+    >
+      Test
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Button when the variant is primary should have correct styles 1`] = `
+<div>
+  <button
+    aria-busy="false"
+    class="css-1cpm9xg-Box"
+    name="test-button"
+    role="button"
+  >
+    <span
+      class="css-1peva9n-Box"
+    >
+      Test
+    </span>
+  </button>
+</div>
+`;

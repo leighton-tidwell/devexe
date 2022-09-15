@@ -8,7 +8,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toHaveStyle({
       width: '18px',
       height: '18px',
-      background: 'conic-gradient(#0000 10%, #51E4AB)',
+      background: 'conic-gradient(#0000 10%, #51E4AB)'
     });
   });
 
@@ -18,7 +18,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toHaveStyle({
       width: '24px',
       height: '24px',
-      background: 'conic-gradient(#0000 10%, #51E4AB)',
+      background: 'conic-gradient(#0000 10%, #51E4AB)'
     });
   });
 
@@ -28,7 +28,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toHaveStyle({
       width: '36px',
       height: '36px',
-      background: 'conic-gradient(#0000 10%, #51E4AB)',
+      background: 'conic-gradient(#0000 10%, #51E4AB)'
     });
   });
 
@@ -38,7 +38,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toHaveStyle({
       width: '18px',
       height: '18px',
-      background: 'conic-gradient(#0000 10%, #51E4AB)',
+      background: 'conic-gradient(#0000 10%, #51E4AB)'
     });
   });
 
@@ -48,7 +48,7 @@ describe('Spinner', () => {
     expect(container.firstChild).toHaveStyle({
       width: '18px',
       height: '18px',
-      background: 'conic-gradient(#0000 10%, #FFFFFF)',
+      background: 'conic-gradient(#0000 10%, #FFFFFF)'
     });
   });
 });

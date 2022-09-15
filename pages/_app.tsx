@@ -1,7 +1,7 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '../theme';
+import '../styles/global.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider theme={theme}>
