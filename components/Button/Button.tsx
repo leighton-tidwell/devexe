@@ -15,6 +15,8 @@ export const Button = ({
     onClick={onClick}
     disabled={disabled}
     sx={{
+      minWidth: 'fit-content',
+      maxWidth: '100%',
       fontFamily: 'body',
       color: 'text.primary',
       borderRadius: 'default',
@@ -45,6 +47,6 @@ export const Button = ({
   >
     {loading && <Spinner color="text" />}
     {icon && !loading && <Icon icon={icon} />}
-    <Text>{children}</Text>
+    {children && <Text>{children}</Text>}
   </ThemeUIButton>
 );
