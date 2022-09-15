@@ -20,6 +20,9 @@ describe('Button', () => {
       render(<Button name="test-button" type="button" loading />);
 
       expect(screen.getByRole('alert')).toBeInTheDocument();
+      expect(screen.getByRole('button').getAttribute('aria-busy')).toEqual(
+        'true'
+      );
     });
   });
 
