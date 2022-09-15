@@ -1,6 +1,8 @@
 import { ButtonProps as ThemeUIButtonProps } from 'theme-ui';
+import { IconTypes } from '../Icon/iconTypes';
 
-export interface ButtonProps extends ThemeUIButtonProps {
+export interface ButtonProps extends ThemeUIButtonProps, IconTypes {
+  name: string;
   loading?: boolean;
-  variant?: 'primary';
+  variant?: 'primary' | 'cta';
 }

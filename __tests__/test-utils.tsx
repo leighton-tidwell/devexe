@@ -3,13 +3,13 @@ import { ReactElement, ReactNode } from 'react';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '../theme';
 
-function AllTheProviders({ children }: { children: ReactNode }) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
-}
+const AllTheProviders = ({ children }: { children: ReactNode }) => (
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
+);
 
 const customRender = (
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>,
+  options?: Omit<RenderOptions, 'wrapper'>
 ) => render(ui, { wrapper: AllTheProviders, ...options });
 
 export * from '@testing-library/react';

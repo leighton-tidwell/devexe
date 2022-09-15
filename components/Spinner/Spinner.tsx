@@ -26,6 +26,8 @@ export const Spinner = ({
 
   return (
     <Box
+      role="alert"
+      aria-label="Loading"
       sx={{
         width: `${spinnerSize}px`,
         height: `${spinnerSize}px`,

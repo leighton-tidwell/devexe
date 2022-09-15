@@ -1,11 +1,11 @@
-import React from 'react';
 import { Button as ThemeUIButton, Text } from 'theme-ui';
-import { Spinner } from '@/components/index';
+import { Icon, Spinner } from '@/components/index';
 import { ButtonProps } from './buttonTypes';
 
 export const Button = ({
   children = '',
   disabled = false,
+  icon,
   onClick = () => {},
   loading = false,
   variant = 'primary',
@@ -15,20 +15,36 @@ export const Button = ({
     onClick={onClick}
     disabled={disabled}
     sx={{
+      fontFamily: 'body',
       color: 'text.primary',
-      borderRadius: '10px',
+      borderRadius: 'default',
       cursor: 'pointer',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '8px',
-      padding: '.5em .8em'
+      gap: '2',
+      px: '3',
+      py: '2',
+      textShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
+      '&:active:focus-visible': {
+        outlineOffset: '4px'
+      },
+      '&:focus-visible': {
+        outlineColor: 'secondary',
+        outlineOffset: '2px',
+        outlineStyle: 'solid'
+      },
+      svg: {
+        filter: 'drop-shadow( 0px 1px 2px rgba(0, 0, 0, 0.25))'
+      }
     }}
+    aria-busy={loading}
     variant={variant}
+    role="button"
     {...props}
   >
-    {/* TODO: icons */}
     {loading && <Spinner color="text" />}
+    {icon && !loading && <Icon icon={icon} />}
     <Text>{children}</Text>
   </ThemeUIButton>
 );

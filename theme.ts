@@ -3,40 +3,65 @@ import { Theme } from 'theme-ui';
 const makeTheme = <T extends Theme>(t: T) => t;
 
 export const theme = makeTheme({
+  breakpoints: ['32em', '48em', '64em', '96em', '128em'],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  fontSizes: [12, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
+  radii: {
+    small: 4,
+    default: 10,
+    circle: 99999
+  },
+  fonts: {
+    heading: "'Inter', sans-serif",
+    body: '"Inter", sans-serif'
+  },
   colors: {
     background: {
       primary: '#19171E',
       secondary: '#16141B',
-      tertiary: '#343246',
+      tertiary: '#343246'
     },
     text: {
-      primary: '#FFFFFF',
-      primaryHighlight: '#51E4AB',
-      secondaryHighlight: '#36C8AF',
-      offText: '#A8A8AD',
+      primary: 'hsl(252, 14%, 93%)',
+      primaryHighlight: 'hsl(157, 73%, 61%)',
+      secondaryHighlight: 'hsl(170, 57%, 50%)',
+      offText: 'hsl(240, 3%, 67%)'
     },
-    primary: '#51E4AB',
-    secondary: '#36C8AF',
+    primary: 'hsl(157, 60%, 40%)',
+    primaryHover: 'hsl(157, 90%, 30%)',
+    secondary: 'hsl(157, 60%, 40%)'
   },
   styles: {
     root: {
-      background: 'background.primary',
-    },
+      background: 'background.primary'
+    }
   },
   buttons: {
-    primary: {
+    cta: {
       // TODO: replace these rgba with references to the primary/secondary highlight theme colors
       background:
-        'linear-gradient(99deg, rgba(54,200,175,1) 0%, rgba(81,228,171,1) 100%)',
+        'linear-gradient(99deg, hsl(157, 73%, 45%) 0%, hsl(157, 60%, 40%) 100%)',
+      transition: 'all 0.2s ease-in-out',
       '&:hover': {
-        filter: 'drop-shadow(0px .5px 2px #36C8AF)',
+        filter: 'drop-shadow(0px .5px 2px hsl(157, 73%, 45%))'
       },
-      '&:active': {
-        background:
-          'linear-gradient(99deg,rgba(81,228,171,1)  0%, rgba(54,200,175,1) 100%)',
+      '&:active:not(:focus-visible)': {
+        filter: 'drop-shadow(0px .5px 5px hsl(157, 73%, 45%))'
       },
+      fontWeight: 'bold'
     },
-  },
+    primary: {
+      background: 'primary',
+      fontWeight: 500,
+      transition: 'all 0.1s ease-in-out',
+      '&:hover': {
+        background: 'primaryHover'
+      },
+      '&:active:not(:focus-visible)': {
+        filter: 'drop-shadow(0px .5px 2px hsl(157, 73%, 45%))'
+      }
+    }
+  }
 });
 
 export type ExactTheme = typeof theme;
