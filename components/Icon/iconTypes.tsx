@@ -8,4 +8,5 @@ export type IconProps = {
 
 export interface IconContainerProps extends IconProps, IconTypes {
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  fontSizeHeights?: boolean;
 }
