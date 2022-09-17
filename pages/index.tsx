@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
-import { Header, Wrapper } from '@/components/index';
+import { Header, Hero, Wrapper } from '@/components/index';
 
 const Home: NextPage = () => (
   <Wrapper>
-    <Header auth />
+    <Header auth={false} />
+    <Hero />
   </Wrapper>
 );
 

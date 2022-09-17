@@ -1,15 +1,16 @@
 import { Button, Icon, Logo } from '@/components/index';
-import { Box, Text } from 'theme-ui';
+import { Box, Grid, Text } from 'theme-ui';
 import { HeaderProps } from './headerTypes';
 
 export const Header = ({ auth }: HeaderProps) => (
-  <>
+  <Grid as="header" columns={12}>
     <Box
       sx={{
-        gridColumnStart: [2, 2, 2, 3],
-        gridColumnEnd: [8, 7, 6, 6],
+        gridColumnStart: [1, 1, 1, 1],
+        gridColumnEnd: [7, 7, 6, 6, 5],
         display: 'grid',
-        placeContent: 'center',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
         py: 4
       }}
     >
@@ -19,7 +20,7 @@ export const Header = ({ auth }: HeaderProps) => (
       <Box
         sx={{
           gridColumnStart: [8, 7],
-          gridColumnEnd: [12, 12, 12, 11],
+          gridColumnEnd: [13, 13, 13, 13],
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
@@ -53,10 +54,13 @@ export const Header = ({ auth }: HeaderProps) => (
     ) : (
       <Box
         sx={{
-          gridColumnStart: [10],
-          gridColumnEnd: [11, null, null, 11],
+          gridColumnStart: [10, 10, 11, 11, 11],
+          gridColumnEnd: [13, 13, 13, 13],
           display: 'grid',
-          placeContent: 'center'
+          placeContent: 'center end',
+          button: {
+            maxWidth: 'fit-content'
+          }
         }}
       >
         <Button name="Login with Discord" type="button" icon="discord">
@@ -64,5 +68,5 @@ export const Header = ({ auth }: HeaderProps) => (
         </Button>
       </Box>
     )}
-  </>
+  </Grid>
 );

@@ -13,6 +13,13 @@ const customJestConfig = {
   },
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
+  collectCoverage: true,
+  collectCoverageFrom: ['components/**/*.[jt]s?(x)', 'pages/**/*.[jt]s?(x)'],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/pages/_app.tsx',
+    '<rootDir>/pages/_document.tsx',
+    '<rootDir>/components/Icon/svgs/*.[jt]s?(x)'
+  ],
   coverageThreshold: {
     global: {
       branches: 0,

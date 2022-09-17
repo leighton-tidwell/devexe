@@ -15,6 +15,7 @@ export const Button = ({
     onClick={onClick}
     disabled={disabled}
     sx={{
+      fontSize: [0, 2, 3],
       minWidth: 'fit-content',
       maxWidth: '100%',
       fontFamily: 'body',
@@ -24,9 +25,9 @@ export const Button = ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '2',
-      px: '3',
-      py: '2',
+      gap: 2,
+      px: 3,
+      py: 2,
       textShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
       '&:active:focus-visible': {
         outlineOffset: '4px'
@@ -46,7 +47,7 @@ export const Button = ({
     {...props}
   >
     {loading && <Spinner color="text" />}
-    {icon && !loading && <Icon icon={icon} />}
+    {icon && !loading && <Icon icon={icon} fontSizeHeights />}
     {children && <Text>{children}</Text>}
   </ThemeUIButton>
 );
