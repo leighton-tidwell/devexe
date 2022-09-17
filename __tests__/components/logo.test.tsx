@@ -6,21 +6,27 @@ describe('Logo', () => {
     render(<Logo />);
 
     const img = screen.getByRole('img') as HTMLImageElement;
-    expect(img.src).toContain('/images/logo-full.svg');
+    expect(img.src).toBe(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
   });
 
   it('should render a logo with icon logo', () => {
     render(<Logo variant="icon" />);
 
     const img = screen.getByRole('img') as HTMLImageElement;
-    expect(img.src).toContain('/images/logo-icon.svg');
+    expect(img.src).toContain(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
   });
 
   it('should render a logo with text logo', () => {
     render(<Logo variant="no-icon" />);
 
     const img = screen.getByRole('img') as HTMLImageElement;
-    expect(img.src).toContain('/images/logo-no-icon.svg');
+    expect(img.src).toContain(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
   });
 
   it('should render a logo with alt text', () => {
@@ -42,12 +48,5 @@ describe('Logo', () => {
 
     const img = screen.getByRole('img') as HTMLImageElement;
     expect(img.alt).toEqual('Devexe logo text');
-  });
-
-  it('should render a logo with custom styles', () => {
-    render(<Logo sx={{ width: '20px' }} />);
-
-    const img = screen.getByRole('img');
-    expect(img).toHaveStyle({ width: '20px' });
   });
 });
