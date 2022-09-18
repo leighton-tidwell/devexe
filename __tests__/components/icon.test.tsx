@@ -16,7 +16,9 @@ describe('Icon', () => {
     it('should render an icon', () => {
       render(<Icon icon="discord" />);
 
-      expect(screen.getByRole('img')).toBeInTheDocument();
+      expect(
+        screen.getByRole('img', { name: 'The discord logo' })
+      ).toBeInTheDocument();
     });
   });
 

@@ -1,5 +1,5 @@
 export type IconTypes = {
-  icon?: 'chevron-down' | 'discord';
+  icon?: 'chevron-down' | 'discord' | 'log-out';
 };
 
 export type IconProps = {

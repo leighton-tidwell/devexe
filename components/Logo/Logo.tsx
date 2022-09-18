@@ -1,7 +1,8 @@
-import { Box as ThemeUIBox } from 'theme-ui';
+import Image from 'next/image';
+import { Box } from 'theme-ui';
 import { LogoProps } from './logoTypes';
 
-export const Logo = ({ sx, variant = 'default' }: LogoProps) => {
+export const Logo = ({ variant = 'default' }: LogoProps) => {
   const variants = {
     default: {
       src: '/images/logo-full.svg',
@@ -20,12 +21,14 @@ export const Logo = ({ sx, variant = 'default' }: LogoProps) => {
   const { src, alt } = variants[variant];
 
   return (
-    <ThemeUIBox
+    <Box
       sx={{
-        img: { ...sx }
+        position: 'relative',
+        height: '70px',
+        width: [200, 250, 275, 300, 350]
       }}
     >
-      <img src={src} alt={alt} />
-    </ThemeUIBox>
+      <Image src={src} alt={alt} layout="fill" objectFit="contain" />
+    </Box>
   );
 };

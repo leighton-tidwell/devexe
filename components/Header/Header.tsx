@@ -1,5 +1,5 @@
-import { Button, Icon, Logo } from '@/components/index';
-import { Box, Grid, Text } from 'theme-ui';
+import { Button, Logo, UserDropdown } from '@/components/index';
+import { Box, Grid } from 'theme-ui';
 import { HeaderProps } from './headerTypes';
 
 export const Header = ({ auth }: HeaderProps) => (
@@ -14,43 +14,10 @@ export const Header = ({ auth }: HeaderProps) => (
         py: 4
       }}
     >
-      <Logo sx={{ width: '100%' }} />
+      <Logo />
     </Box>
     {auth ? (
-      <Box
-        sx={{
-          gridColumnStart: [8, 7],
-          gridColumnEnd: [13, 13, 13, 13],
-          display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'center',
-          gap: 2
-        }}
-      >
-        <Text
-          sx={{ display: ['none', 'none', 'block', 'block'] }}
-          color="text.primary"
-        >
-          Username
-        </Text>
-        <Box
-          sx={{
-            background: 'white',
-            borderRadius: 9999,
-            height: '32px',
-            width: '32px'
-          }}
-        />
-        <Box
-          sx={{
-            cursor: 'pointer'
-          }}
-          role="button"
-          aria-label="Profile options"
-        >
-          <Icon icon="chevron-down" size="md" />
-        </Box>
-      </Box>
+      <UserDropdown />
     ) : (
       <Box
         sx={{

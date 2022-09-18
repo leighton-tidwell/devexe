@@ -1,6 +1,6 @@
 import { Box, Theme } from 'theme-ui';
 import { IconContainerProps } from './iconTypes';
-import { ChevronDownSVG, DiscordSVG } from './svgs';
+import { ChevronDownSVG, DiscordSVG, LogOutSVG } from './svgs';
 
 export const Icon = ({
   color = 'white',
@@ -10,7 +10,8 @@ export const Icon = ({
 }: IconContainerProps) => {
   const icons = {
     'chevron-down': <ChevronDownSVG color={color} />,
-    discord: <DiscordSVG color={color} />
+    discord: <DiscordSVG color={color} />,
+    'log-out': <LogOutSVG color={color} />
   };
 
   const sizes = {

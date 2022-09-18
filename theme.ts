@@ -19,7 +19,11 @@ export const theme = makeTheme({
     background: {
       primary: '#19171E',
       secondary: '#16141B',
-      tertiary: '#343246'
+      tertiary: '#343246',
+      dashboard: {
+        secondary: '#262534',
+        tertiary: '#2F2E41'
+      }
     },
     text: {
       primary: 'hsl(252, 14%, 93%)',
