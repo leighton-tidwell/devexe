@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Text } from 'theme-ui';
 import { Avatar, Icon } from '@/components/index';
 
 export const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isHovered || isOpen) return setVisible(true);
+
+    const timer = setTimeout(() => {
+      setVisible(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [isHovered, isOpen]);
 
   return (
     <Box
@@ -16,16 +28,7 @@ export const UserDropdown = () => {
         alignItems: 'center',
         gap: 2,
         position: 'relative',
-        '.expand-profile-dropdown:focus-within + .profile-dropdown': {
-          opacity: 1
-        },
-        '.expand-profile-dropdown:hover + .profile-dropdown': {
-          opacity: 1
-        },
-        '.profile-dropdown:hover': {
-          opacity: 1
-        },
-        '.profile-dropdown:focus-within': {
+        '.hover': {
           opacity: 1
         }
       }}
@@ -50,10 +53,12 @@ export const UserDropdown = () => {
         role="button"
         aria-label="Profile options"
         className="expand-profile-dropdown"
-        aria-expanded={isOpen || isHovered}
+        aria-expanded={visible}
         tabIndex={0}
         onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => !isHovered && setIsOpen(false)}
+        onMouseLeave={() => setIsOpen(false)}
+        onFocus={() => setIsOpen(true)}
+        onBlur={() => setIsOpen(false)}
       >
         <Icon icon="chevron-down" size="md" />
       </Box>
@@ -70,16 +75,13 @@ export const UserDropdown = () => {
           display: 'grid',
           gridTemplateColumns: '1fr',
           opacity: 0,
-          transition: 'opacity 0.2s ease-in-out'
+          transition: 'opacity 0.2s ease-in'
         }}
         data-testid="profile-dropdown"
-        className="profile-dropdown"
-        aria-hidden={!isOpen}
+        className={`profile-dropdown ${visible ? 'hover' : ''}`}
+        aria-hidden={!visible}
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setIsOpen(false);
-        }}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <Box
           sx={{ display: 'flex', alignItems: 'center', py: 2, px: 3, gap: 2 }}
@@ -90,6 +92,7 @@ export const UserDropdown = () => {
         <Box
           as="a"
           sx={{
+            pointerEvents: 'inherit',
             display: 'flex',
             alignItems: 'center',
             py: 2,
@@ -109,6 +112,8 @@ export const UserDropdown = () => {
               outlineStyle: 'solid'
             }
           }}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
           tabIndex={0}
         >
           <Text sx={{ flexBasis: '100%' }}>Log out</Text>
