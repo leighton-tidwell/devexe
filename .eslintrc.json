@@ -22,7 +22,8 @@
         "object-curly-newline": "off",
         "comma-dangle": "off",
         "max-len": "off",
-        "operator-linebreak": "off"
+        "operator-linebreak": "off",
+        "no-promise-executor-return": "off"
       }
     },
     {
