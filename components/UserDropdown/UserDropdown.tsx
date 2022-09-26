@@ -112,7 +112,7 @@ export const UserDropdown = () => {
               outlineStyle: 'solid'
             }
           }}
-          tabIndex={0}
+          tabIndex={visible ? 0 : -1}
           onFocus={() => setIsHovered(true)}
           onBlur={() => setIsHovered(false)}
         >
