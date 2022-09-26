@@ -115,6 +115,7 @@ export const UserDropdown = () => {
           tabIndex={visible ? 0 : -1}
           onFocus={() => setIsHovered(true)}
           onBlur={() => setIsHovered(false)}
+          data-testid="profile-dropdown-link"
         >
           <Text sx={{ flexBasis: '100%' }}>Log out</Text>
           <Icon icon="log-out" fontSizeHeights />
