@@ -72,10 +72,11 @@ export const UserDropdown = () => {
           overflow: 'hidden',
           color: 'text.primary',
           fontSize: [1],
-          display: 'grid',
           gridTemplateColumns: '1fr',
           opacity: 0,
-          transition: 'opacity 0.2s ease-in'
+          transition: 'opacity 0.2s ease-in',
+          display: 'grid',
+          pointerEvents: visible ? 'all' : 'none'
         }}
         data-testid="profile-dropdown"
         className={`profile-dropdown ${visible ? 'hover' : ''}`}
