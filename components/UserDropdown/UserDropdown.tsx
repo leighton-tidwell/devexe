@@ -72,10 +72,11 @@ export const UserDropdown = () => {
           overflow: 'hidden',
           color: 'text.primary',
           fontSize: [1],
-          display: 'grid',
           gridTemplateColumns: '1fr',
           opacity: 0,
-          transition: 'opacity 0.2s ease-in'
+          transition: 'opacity 0.2s ease-in',
+          display: 'grid',
+          pointerEvents: visible ? 'all' : 'none'
         }}
         data-testid="profile-dropdown"
         className={`profile-dropdown ${visible ? 'hover' : ''}`}
@@ -111,9 +112,10 @@ export const UserDropdown = () => {
               outlineStyle: 'solid'
             }
           }}
-          tabIndex={0}
+          tabIndex={visible ? 0 : -1}
           onFocus={() => setIsHovered(true)}
           onBlur={() => setIsHovered(false)}
+          data-testid="profile-dropdown-link"
         >
           <Text sx={{ flexBasis: '100%' }}>Log out</Text>
           <Icon icon="log-out" fontSizeHeights />

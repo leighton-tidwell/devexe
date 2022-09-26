@@ -9,6 +9,10 @@ describe('UserDropdown', () => {
       expect(
         screen.getByRole('button', { name: 'Profile options' })
       ).toBeInTheDocument();
+      expect(screen.getByTestId('profile-dropdown-link')).toHaveAttribute(
+        'tabindex',
+        '-1'
+      );
     });
   });
 
@@ -25,6 +29,10 @@ describe('UserDropdown', () => {
       expect(
         screen.getByRole('button', { name: 'Profile options' })
       ).toHaveAttribute('aria-expanded', 'true');
+      expect(screen.getByTestId('profile-dropdown-link')).toHaveAttribute(
+        'tabindex',
+        '0'
+      );
     });
 
     it('should update accessibility when hovering over menu', async () => {
